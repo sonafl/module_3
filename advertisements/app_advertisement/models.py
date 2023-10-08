@@ -16,9 +16,3 @@ class Advertisement(models.Model):
     # DateTimeField - cпециальное поле для работы с датами 
     created_at = models.DateTimeField('Дата создания', auto_now_add=True)
     updated_at = models.DateTimeField('Дата обновления', auto_now=True)
-  
-    def __str__(self):
-        return f'Advertisement: Advertisement(id={self.id}, title={self.title}, price={self.price})'
-    
-    class Meta:
-        db_table = 'advertisements'
