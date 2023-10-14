@@ -2,7 +2,7 @@ from django.contrib import admin
 from .models import Advertisement
 
 class AdvertisementAdmin(admin.ModelAdmin):
-    list_display = ['id', 'title', 'description', 'price', 'created_date', 'auction']
+    list_display = ['id', 'title', 'description', 'price', 'created_date', 'auction', 'updated_date']
     list_filter = ['created_at', 'price']
     actions = ['make_auction_false', 'make_auction_true']
     fieldsets = (
