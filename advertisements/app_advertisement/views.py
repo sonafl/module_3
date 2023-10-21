@@ -14,12 +14,12 @@ def top_sellers(request):
     return render(request, 'top-sellers.html')
 
 def advertisement_post(request):
-    if request.method == 'POST':
+    if request.method == "POST":
         form = AdvertisementForm(request.POST, request.FILES)
         if form.is_valid():
-            advertisement = Advertisement(**form.cleaned_data)
-            advertisement.user = request.user
-            advertisement.save()
+            new_advertisement = form.save(commit=False)
+            new_advertisement.user = request.user
+            new_advertisement.save()
             url = reverse('main_page')
             return redirect(url)
     else:
